@@ -16,25 +16,27 @@ namespace ListaObjetos
             produtos.Add(new Produto(2, "Sansung", 4522.56f));
             produtos.Add(new Produto(2, "Motorola G8", 6522.56f));
 
-            Produto p1 = new Produto();
-            p1.Codigo = 67;
-            p1.Nome = "Iphone XII";
-            p1.Preco = 8952.56f;
+            Produto iphone = new Produto();
+            iphone.Codigo = 67;
+            iphone.Nome = "Iphone XII";
+            iphone.Preco = 8952.56f;
 
-            produtos.Add(p1);
+            produtos.Add(iphone);
 
             foreach (Produto item in produtos)
             {
-                Console.WriteLine(item.Nome);
+                Console.WriteLine($"{item.Nome} - R${item.Preco}");
             }
 
             produtos.RemoveAt(3);
 
-            Console.WriteLine("\nRemoção Feita\n");
+            produtos.RemoveAll(x => x.Nome == "Apple Watch");
+
+            Console.WriteLine("\nLista Alterada\n");
 
             foreach (Produto item in produtos)
             {
-                Console.WriteLine(item.Nome);
+                Console.WriteLine($"{item.Nome} - R${item.Preco}");
             }
             
 
